@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+  --color-cream: #F0F7EE; /* background */
+  --color-sky:   #C4D7F2;
+  --color-mint:  #AFDEDC;
+  --color-ink:   #2B2B33; /* dark text for contrast on the light palette */
+}
