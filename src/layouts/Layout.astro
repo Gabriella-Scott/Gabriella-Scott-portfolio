@@ -4,8 +4,8 @@ import "../styles/global.css";
 const { title = "Gabriella Scott" } = Astro.props;
 
 const tabs = [
-  { href: "/",        label: "Projects" },
   { href: "/about",   label: "About me" },
+  { href: "/",        label: "Projects" },
   { href: "/hobbies", label: "Hobbies" },
 ];
 
@@ -16,12 +16,22 @@ const current = Astro.url.pathname.replace(/\/$/, "") || "/";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
   </head>
   <body class="min-h-screen bg-cream text-ink">
-    <header class="border-b border-ink/10">
-      <div class="mx-auto max-w-3xl px-6 py-6">
-        <p class="text-lg font-semibold tracking-tight">Gabriella Scott</p>
-        <nav class="mt-4 flex gap-2">
+    <header class="relative overflow-hidden border-b border-ink/10" style="height: 12.5vh;">
+      <!-- Decorative background title -->
+      <p
+        class="absolute inset-0 flex items-center justify-center whitespace-nowrap pointer-events-none select-none leading-none"
+        style="font-family: 'Great Vibes', cursive; font-size: 7vw; color: #C4D7F2; -webkit-text-stroke: 2px #C4D7F2;"
+      >
+        Gabriella Scott
+      </p>
+      <!-- Nav sits on top -->
+      <div class="relative z-10 mx-auto max-w-3xl px-6 h-full flex items-end pb-3">
+        <nav class="flex gap-2">
           {tabs.map((tab) => (
             <a
               href={tab.href}
