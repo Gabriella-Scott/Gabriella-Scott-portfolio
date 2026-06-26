@@ -1,7 +1,207 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+type Project = {
+  title: string;
+  tagline: string;
+  status: "In progress" | "Completed";
+  context: string;
+  description: string[];
+  highlights: string[];
+  stack: string[];
+  category: "university" | "other";
+  // Add { label, href } entries when you have public links (repo, report, demo).
+  links?: { label: string; href: string }[];
+};
+
+const projects: Project[] = [
+  {
+    title: "WhatsApp-Based Language Data Collection for the SA-CDI",
+    tagline:
+      "My Honours research project: replacing a mobile app with an accessible WhatsApp questionnaire so caregivers can contribute without installing anything.",
+    status: "In progress",
+    category: "university",
+    context: "BScHons Computer Science · Stellenbosch University · Child Language Development Node",
+    description: [
+      "The SA-CDI project is gathering Communicative Development Inventory responses from caregivers across South Africa to establish early-language development norms in the country's official languages, with a target of roughly 20,000 responses. An earlier pilot used a Flutter app, but asking caregivers to install software created real barriers around data cost, device storage, and digital literacy. My project delivers the same questionnaire through WhatsApp, a platform most caregivers already use, with no installation at all.",
+      "I'm building the system in Python and Flask, using Twilio for WhatsApp messaging, Firebase for storage, and Azure neural text-to-speech so caregivers with lower literacy can hear each question read aloud. It runs in English, Afrikaans, and isiXhosa, persists session state server-side so a questionnaire can be paused and resumed across conversations, and pseudonymises participant data to stay POPIA-compliant. Alongside the engineering, the work is structured around three research questions: how the WhatsApp interface compares to the original app, which text-to-speech system serves each language best, and how the interface holds up under usability evaluation.",
+    ],
+    highlights: [
+      "Working button-based prototype in the Twilio sandbox, with a WhatsApp Flows version prepared for migration once a Business Account is approved.",
+      "AgileUX co-design with linguists, fieldworkers, and caregivers throughout.",
+      "Schema-compatible with the research team's existing Firebase pipeline, so responses drop straight into their analysis tools.",
+    ],
+    stack: ["Python", "Flask", "Twilio", "Firebase", "Azure Speech (TTS)", "WhatsApp Business API"],
+    links: [],
+  },
+  {
+    title: "Layita — Maternal Health Chatbot & M&E Dashboard",
+    tagline:
+      "A WhatsApp chatbot and staff-facing dashboard co-designed with a South African NGO running a First Thousand Days programme.",
+    status: "Completed",
+    category: "other",
+    context: "Group project (team of three) · Madwaleni community, Eastern Cape",
+    description: [
+      "Layita pairs a WhatsApp chatbot with a monitoring-and-evaluation dashboard for an NGO supporting caregivers in their child's first thousand days. The chatbot delivers approved parenting and health content in isiXhosa through a menu-based, on-demand model, so it never sends unsolicited messages, and it's designed to work in low-connectivity environments.",
+      "It answers frequently asked questions using a retrieval-augmented generation pipeline constrained to vetted sources, with content curated from Wordworks and Side-by-Side, and flags out-of-scope or clinical questions for human review rather than answering them itself. The backend runs on Flask and SQLite with Twilio for WhatsApp integration, and the React dashboard gives staff analytics on engagement, question categories, and retention to support evidence-based decisions. We worked in a user-centred, co-design process with NGO staff and community Mother Mentors, under formal ethics approval, with attention to anonymisation, consent, and cultural sensitivity.",
+    ],
+    highlights: [
+      "RAG constrained to vetted, NGO-approved sources; clinical queries escalated to a human rather than answered.",
+      "Menu-based, on-demand interaction with no unsolicited messaging.",
+      "Dashboard surfacing engagement, question categories, and retention for programme decisions.",
+    ],
+    stack: ["Flask", "SQLite", "React", "Twilio", "RAG"],
+    links: [],
+  },
+];
+
+const universityProjects = projects.filter((p) => p.category === "university");
+const otherProjects = projects.filter((p) => p.category === "other");
 ---
+
 <Layout title="Projects — Gabriella Scott">
-  <h1 class="text-3xl font-bold tracking-tight">Projects</h1>
-  <p class="mt-3 text-ink/70">Coming soon.</p>
+  <div class="flex items-center gap-3">
+    <span class="h-9 w-1.5 rounded-full bg-mint"></span>
+    <h1 class="text-3xl font-bold tracking-tight">Projects</h1>
+  </div>
+
+  <h2 class="mt-12 text-xl font-semibold tracking-tight">University Projects</h2>
+  <div class="mt-6 space-y-8">
+    {
+      universityProjects.map((project, i) => (
+        <article
+          class="project-card group rounded-2xl border border-ink/10 bg-white/70 p-6 transition-shadow duration-300 hover:shadow-lg sm:p-8"
+          style={`--i:${i}`}
+        >
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h3 class="text-xl font-semibold tracking-tight sm:text-2xl">{project.title}</h3>
+              <p class="mt-1 text-sm text-ink/60">{project.context}</p>
+            </div>
+            <span
+              class:list={[
+                "shrink-0 rounded-full px-3 py-1 text-xs font-medium text-ink/80",
+                project.status === "In progress" ? "bg-mint/60" : "bg-sky/50",
+              ]}
+            >
+              {project.status}
+            </span>
+          </div>
+          <p class="mt-4 text-ink/80">{project.tagline}</p>
+          <div class="mt-4 space-y-3 text-sm leading-relaxed text-ink/70">
+            {project.description.map((para) => <p>{para}</p>)}
+          </div>
+          <ul class="mt-5 space-y-2">
+            {project.highlights.map((point) => (
+              <li class="flex gap-2.5 text-sm text-ink/75">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mint" aria-hidden="true" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-2">
+            {project.stack.map((tech) => (
+              <span class="rounded-full bg-sky/35 px-2.5 py-1 text-xs font-medium text-ink/75">
+                {tech}
+              </span>
+            ))}
+          </div>
+          {project.links && project.links.length > 0 && (
+            <div class="mt-5 flex flex-wrap gap-4">
+              {project.links.map((link) => (
+                <a
+                  href={link.href}
+                  class="text-sm font-medium text-ink/80 underline decoration-mint decoration-2 underline-offset-4 transition-colors hover:text-ink"
+                >
+                  {link.label} →
+                </a>
+              ))}
+            </div>
+          )}
+        </article>
+      ))
+    }
+  </div>
+
+  <h2 class="mt-14 text-xl font-semibold tracking-tight">Other Projects</h2>
+  <div class="mt-6 space-y-8">
+    {
+      otherProjects.map((project, i) => (
+        <article
+          class="project-card group rounded-2xl border border-ink/10 bg-white/70 p-6 transition-shadow duration-300 hover:shadow-lg sm:p-8"
+          style={`--i:${i}`}
+        >
+          <div class="flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h3 class="text-xl font-semibold tracking-tight sm:text-2xl">{project.title}</h3>
+              <p class="mt-1 text-sm text-ink/60">{project.context}</p>
+            </div>
+            <span
+              class:list={[
+                "shrink-0 rounded-full px-3 py-1 text-xs font-medium text-ink/80",
+                project.status === "In progress" ? "bg-mint/60" : "bg-sky/50",
+              ]}
+            >
+              {project.status}
+            </span>
+          </div>
+          <p class="mt-4 text-ink/80">{project.tagline}</p>
+          <div class="mt-4 space-y-3 text-sm leading-relaxed text-ink/70">
+            {project.description.map((para) => <p>{para}</p>)}
+          </div>
+          <ul class="mt-5 space-y-2">
+            {project.highlights.map((point) => (
+              <li class="flex gap-2.5 text-sm text-ink/75">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-mint" aria-hidden="true" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="mt-6 flex flex-wrap gap-2">
+            {project.stack.map((tech) => (
+              <span class="rounded-full bg-sky/35 px-2.5 py-1 text-xs font-medium text-ink/75">
+                {tech}
+              </span>
+            ))}
+          </div>
+          {project.links && project.links.length > 0 && (
+            <div class="mt-5 flex flex-wrap gap-4">
+              {project.links.map((link) => (
+                <a
+                  href={link.href}
+                  class="text-sm font-medium text-ink/80 underline decoration-mint decoration-2 underline-offset-4 transition-colors hover:text-ink"
+                >
+                  {link.label} →
+                </a>
+              ))}
+            </div>
+          )}
+        </article>
+      ))
+    }
+  </div>
 </Layout>
+
+<style>
+  @keyframes project-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  .project-card {
+    animation: project-fade-up 0.5s ease-out backwards;
+    animation-delay: calc(var(--i, 0) * 120ms);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card {
+      animation: none;
+    }
+  }
+</style>
