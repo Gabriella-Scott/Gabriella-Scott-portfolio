@@ -35,15 +35,21 @@ const projects: Project[] = [
     links: [],
   },
   {
-    title: "Layita — Maternal Health Chatbot & M&E Dashboard",
+    title: "Maternal Health WhatsApp Chatbot & M&E Dashboard",
     tagline:
       "A WhatsApp chatbot and staff-facing dashboard co-designed with a South African NGO running a First Thousand Days programme.",
     status: "Completed",
-    category: "other",
+    category: "university",
     context: "Group project (team of three) · Madwaleni community, Eastern Cape",
     description: [
-      "Layita pairs a WhatsApp chatbot with a monitoring-and-evaluation dashboard for an NGO supporting caregivers in their child's first thousand days. The chatbot delivers approved parenting and health content in isiXhosa through a menu-based, on-demand model, so it never sends unsolicited messages, and it's designed to work in low-connectivity environments.",
-      "It answers frequently asked questions using a retrieval-augmented generation pipeline constrained to vetted sources, with content curated from Wordworks and Side-by-Side, and flags out-of-scope or clinical questions for human review rather than answering them itself. The backend runs on Flask and SQLite with Twilio for WhatsApp integration, and the React dashboard gives staff analytics on engagement, question categories, and retention to support evidence-based decisions. We worked in a user-centred, co-design process with NGO staff and community Mother Mentors, under formal ethics approval, with attention to anonymisation, consent, and cultural sensitivity.",
+      `Layita pairs a WhatsApp chatbot with a monitoring-and-evaluation dashboard for an NGO supporting caregivers in 
+      their child's first thousand days. The chatbot delivers approved parenting and health content in isiXhosa through a menu-based, 
+      on-demand model, so it never sends unsolicited messages, and it's designed to work in low-connectivity environments.`,
+      `It answers frequently asked questions using a retrieval-augmented generation pipeline constrained to vetted sources, 
+      with content curated from Wordworks and Side-by-Side, and flags out-of-scope or clinical questions for human review rather 
+      than answering them itself. The backend runs on Flask and SQLite with Twilio for WhatsApp integration, and the React dashboard
+       gives staff analytics on engagement, question categories, and retention to support evidence-based decisions. 
+       We worked in a user-centred, co-design process with NGO staff and community Mother Mentors, under formal ethics approval, with attention to anonymisation, consent, and cultural sensitivity.`,
     ],
     highlights: [
       "RAG constrained to vetted, NGO-approved sources; clinical queries escalated to a human rather than answered.",
@@ -53,6 +59,27 @@ const projects: Project[] = [
     stack: ["Flask", "SQLite", "React", "Twilio", "RAG"],
     links: [],
   },
+  {
+  title: "This Portfolio Website",
+  tagline:
+    "A passion project built to showcase my work and let people get to know me beyond a CV bullet point.",
+  status: "In progress",
+  category: "other",
+  context: "Personal project · Ongoing",
+  description: [
+    "I built this site because a CV and a GitHub profile only tell part of the story. I wanted somewhere I could show the projects I've actually enjoyed working on, explain the thinking behind them properly, and let a bit of my personality come through — not just a list of technologies I've touched.",
+    "It's built with Astro and Tailwind CSS v4, styled around a small custom colour system and quiet, intentional animation rather than off-the-shelf templates. I designed it to start from a clean, simple foundation and grow more expressive over time, layering in details like the polaroid-style photos and fade-up transitions once the basics were solid rather than trying to get everything perfect in one pass.",
+  ],
+  highlights: [
+    "Custom design system built from scratch with Tailwind v4's CSS-first configuration.",
+    "Built iteratively — starting minimal and adding personality-driven touches like handwritten captions and polaroid framing.",
+    "A living project: sections like Hobbies & Adventures are still being filled in.",
+  ],
+  stack: ["Astro", "Tailwind CSS v4", "TypeScript"],
+  links: [
+    { label: "GitHub Repo", href: "https://github.com/Gabriella-Scott/Gabriella-Scott-portfolio" },
+  ],
+},
 ];
 
 const universityProjects = projects.filter((p) => p.category === "university");
@@ -66,6 +93,7 @@ const otherProjects = projects.filter((p) => p.category === "other");
   </div>
 
   <h2 class="mt-12 text-xl font-semibold tracking-tight">University Projects</h2>
+  <p class="mt-2 max-w-2xl text-ink/70">Here are some of my most memorable university projects.</p>
   <div class="mt-6 space-y-8">
     {
       universityProjects.map((project, i) => (

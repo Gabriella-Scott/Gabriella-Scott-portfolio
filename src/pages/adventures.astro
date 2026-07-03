@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const adventures = [
+  {
+    title: "Cape Town Cycle Tour",
+    date: "March 2026",
+    location: "Cape Town, Western Cape",
+    body:
+      `One of my favourite experiences is the Cape Town Cycle Tour. If you told me 2 years ago
+      that I would be able to cycle 109km I would have told you that you are out of your mind.
+      It all started with my mother that loves cycling, she used to beg me to just try it out,
+      eventually I gave in and started cycling with her. I was quickly humbled, but I slowly started 
+      to enjoy it. Eventually I upgraded to cleat shoes. These are shoes that cyclists use to keep 
+      their feet bound to the pedals. I took a few nasty falls trying to figure it out, but I kept
+      on cycling. Before the actual race, we did a seeding race. This race was 95km, I was scared but
+      excited. The race went surprisingly well, and I enjoyed it. 
+      The day of the Cycle Tour came around. It was 4 of us that stuck in a group. My parents, myself 
+      and my boyfriend. The race started of freezing cold and so many people was bundled around me.
+      I had to have complete consentration the whole time other wise I might crash, there was a few
+      close calls. As we continued the wind picked up, but we were still fine. Eventually the 2 men went
+      ahead so it was just my mom and I. A round 80 km I got a puncture! A tiny needle was in my tyre! 
+      What would be the odds of my riding into a needle? Literally a needle in a haystack. I was 
+      upset immediately. It was just my mom and I, neither of us has had much experience with tube changing.
+      We stood there for a few minutes, we saw an ambulance and walked closer. None of them offered to help.
+      After a few minutes, a man came to us and asked if we had a spare tube. We gave our other tube to him.
+      After he changed his own tube, he came to help us. We were so thankful. After that we were on the
+      road again. With 20 minutes wasted, BUT now we had knowledge on how to change a tube.
+      Those last few kilometers were tough, everything was aching. But I pushed through, I was determined
+      to end strong. In the end it was amazing, I felt so proud of myself for overcoming all the hurdles.
+      I cannot wait to try again next year. `,
+  },
+  {
+    title: "Xterra",
+    date: "Feb 2025",
+    location: "Grabouw, Western Cape",
+    body:
+      "",
+  },
+  {
+    title: "Harbour to Harbour Swim",
+    date: "May 2024",
+    location: "Gordons Bay, Western Cape",
+    body:
+      "",
+  },
+];
+---
+
+<Layout title="Adventures — Gabriella Scott">
+  <h1 class="text-3xl font-bold tracking-tight">Adventures</h1>
+
+  <p class="mt-3 max-w-2xl text-ink/70">
+    I love to experience new things that gets the heart pumping and the blood flowing. Here are some of my
+    favourite adventures that I will never forget.
+  </p>
+
+  <section class="mt-12">
+    <div class="mt-8 space-y-8">
+      {adventures.map((a) => (
+        <article class="fade-up rounded-2xl bg-sky/20 p-6">
+          <div class="flex flex-wrap items-baseline gap-x-3">
+            <h3 class="text-xl font-semibold">{a.title}</h3>
+            <span class="font-handwriting text-lg text-ink/60">{a.location}</span>
+          </div>
+          <p class="mt-1 text-sm text-ink/50">{a.date}</p>
+          <p class="mt-3 leading-relaxed text-ink/80">{a.body}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .fade-up { animation: fade-up 0.6s ease-out both; }
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fade-up { animation: none; }
+  }
+</style>
