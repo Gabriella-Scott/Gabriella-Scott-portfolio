@@ -60,26 +60,102 @@ const projects: Project[] = [
     links: [],
   },
   {
-  title: "This Portfolio Website",
-  tagline:
-    "A passion project built to showcase my work and let people get to know me beyond a CV bullet point.",
-  status: "In progress",
-  category: "other",
-  context: "Personal project · Ongoing",
-  description: [
-    "I built this site because a CV and a GitHub profile only tell part of the story. I wanted somewhere I could show the projects I've actually enjoyed working on, explain the thinking behind them properly, and let a bit of my personality come through — not just a list of technologies I've touched.",
-    "It's built with Astro and Tailwind CSS v4, styled around a small custom colour system and quiet, intentional animation rather than off-the-shelf templates. I designed it to start from a clean, simple foundation and grow more expressive over time, layering in details like the polaroid-style photos and fade-up transitions once the basics were solid rather than trying to get everything perfect in one pass.",
-  ],
-  highlights: [
-    "Custom design system built from scratch with Tailwind v4's CSS-first configuration.",
-    "Built iteratively — starting minimal and adding personality-driven touches like handwritten captions and polaroid framing.",
-    "A living project: sections like Hobbies & Adventures are still being filled in.",
-  ],
-  stack: ["Astro", "Tailwind CSS v4", "TypeScript"],
-  links: [
-    { label: "GitHub Repo", href: "https://github.com/Gabriella-Scott/Gabriella-Scott-portfolio" },
-  ],
-},
+    title: "Campus Carpool App",
+    tagline:
+      "A final-year group project for the software company Gendac: an Android app that matches Stellenbosch students for shared rides to and from campus.",
+    status: "Completed",
+    category: "university",
+    context: "Final-year undergraduate group project (team of six) · Stellenbosch University · Client: Gendac",
+    description: [
+      "In my final year of undergrad, my team built the Campus Carpool App for Gendac, a software company that brought us the brief as a real client. They wanted an Android app that connects Stellenbosch students with similar travel routes and schedules so they can share lifts — splitting fuel costs, cutting emissions, and easing the pressure on campus parking, while giving students a safer and more flexible alternative to driving alone or relying on public transport.",
+      "We built it with .NET MAUI and C# on an Azure backend, using Google Maps for routing and distance estimation and GitLab for version control and issue tracking. Students verify with their @sun.ac.za email and an OTP, then set themselves up as a driver or passenger, lay out a route with departure and arrival windows, and get matched with compatible students. A cost-splitting algorithm works out each person's fair share from distance travelled and a standard fuel tariff, matched users are connected through WhatsApp, and safety was treated as a first-class concern throughout — student-only access, mutual ratings and reviews, a women-only ride option, and POPI-compliant handling of location data.",
+    ],
+    highlights: [
+      "Route- and schedule-based matching with a cost-splitting algorithm accounting for distance and fuel tariff.",
+      "Student-only access via @sun.ac.za email verification with OTP, and driver/passenger modes with WhatsApp-based contact.",
+      "Safety-focused design: mutual ratings, a women-only ride option, and POPI-compliant location-data handling.",
+    ],
+    stack: [".NET MAUI", "C#", "Azure", "Google Maps API", "GitLab"],
+    links: [],
+  },
+  {
+    title: "This Portfolio Website",
+    tagline:
+      "A passion project built to showcase my work and let people get to know me beyond a CV bullet point.",
+    status: "In progress",
+    category: "other",
+    context: "Personal project · Ongoing",
+    description: [
+      "I built this site because a CV and a GitHub profile only tell part of the story. I wanted somewhere I could show the projects I've actually enjoyed working on, explain the thinking behind them properly, and let a bit of my personality come through — not just a list of technologies I've touched.",
+      "It's built with Astro and Tailwind CSS v4, styled around a small custom colour system and quiet, intentional animation rather than off-the-shelf templates. I designed it to start from a clean, simple foundation and grow more expressive over time, layering in details like the polaroid-style photos and fade-up transitions once the basics were solid rather than trying to get everything perfect in one pass.",
+    ],
+    highlights: [
+      "Custom design system built from scratch with Tailwind v4's CSS-first configuration.",
+      "Built iteratively — starting minimal and adding personality-driven touches like handwritten captions and polaroid framing.",
+      "A living project: sections like Hobbies & Adventures are still being filled in.",
+    ],
+    stack: ["Astro", "Tailwind CSS v4", "TypeScript"],
+    links: [
+      { label: "GitHub Repo", href: "https://github.com/Gabriella-Scott/Gabriella-Scott-portfolio" },
+    ],
+  },
+  {
+    title: "Ionospheric Current Modelling at SANSA",
+    tagline:
+      "A scientific-computing internship refactoring a Python codebase that models ionospheric currents from South African and Namibian geomagnetic observatory data.",
+    status: "Completed",
+    category: "other",
+    context: "Scientific Computing Intern · South African National Space Agency (SANSA), on-site · June 2025",
+    description: [
+      "As a scientific-computing intern at SANSA, I worked on a Python codebase implementing Spherical Elementary Current Systems (SECS) — a technique for modelling ionospheric currents from the geomagnetic field measured at ground observatories, in this case across South Africa and Namibia. My focus was making the existing scientific code cleaner, more configurable, and faster to run.",
+      "I refactored what had been a single script into modular, configurable functions, using dataclasses and config files to separate the science from the parameters so runs could be set up without editing the code. I implemented the conversion of raw magnetic field components into the form the SECS calculations required, and optimised the data-processing pipeline by moving it onto vectorised pandas operations rather than slower row-by-row handling.",
+    ],
+    highlights: [
+      "Restructured a monolithic script into modular, configurable functions driven by dataclasses and config files.",
+      "Implemented conversion of raw magnetic field components into the inputs required for SECS calculations.",
+      "Optimised data processing with vectorised pandas operations for faster, cleaner runs.",
+    ],
+    stack: ["Python", "pandas", "SECS"],
+    links: [],
+  },
+  {
+    title: "CSV-Flow — Data Workflow Desktop App",
+    tagline:
+      "Six months of freelance work maintaining and extending a Java desktop tool for building and running configurable CSV data workflows.",
+    status: "Completed",
+    category: "other",
+    context: "Freelance Software Developer · 29CPmax (Remote) · Aug 2025 – Feb 2026",
+    description: [
+      "CSV-Flow is a Java-based desktop application for building CSV data workflows — a tool aimed at end-user productivity, with support for configurable actions, scheduling, and licensing and updates. I joined as a freelance developer for six months to help maintain and extend it, working remotely for 29CPmax.",
+      "I started by getting to grips with an existing codebase, tracking down and fixing bugs to improve stability and performance before moving on to new functionality. From there I built out features that extended what the tool could do, including improvements to the workflow editor and to the user-facing operations people rely on day to day. The application is built and packaged with Maven.",
+    ],
+    highlights: [
+      "Diagnosed and resolved existing issues to improve the stability and performance of a live codebase.",
+      "Implemented new features extending the tool, including workflow-editor and user-operation improvements.",
+      "Worked within a Maven-based build and packaging setup, focused on end-user productivity.",
+    ],
+    stack: ["Java", "Maven"],
+    links: [],
+  },
+  {
+    title: "BE RUG BE — Brand Showcase Website",
+    tagline:
+      "A showcase site for a French rugby ball brand, built as a favour for a friend — presenting their flagship balls with links out to buy.",
+    status: "In progress",
+    category: "other",
+    context: "Personal project · Built for a friend",
+    description: [
+      "BE RUG BE is a French rugby ball brand, and I'm designing and building their showcase website as a favour for a friend. Rather than a full storefront, the site focuses on presenting the range clearly and sending visitors out to purchase, so the emphasis is on clean product presentation and brand feel rather than checkout logic.",
+      "It centres on the three flagship balls — the Alpha-T5 for training, the Elipse for match play, and the Shark for competition — each with its own presentation and an outbound link to buy. It's built with Next.js using the App Router and TypeScript, styled with Tailwind CSS, deployed on Vercel, and version-controlled through GitHub. The foundational architecture and component structure are in place, with content and asset integration still ongoing.",
+    ],
+    highlights: [
+      "Three flagship products — Alpha-T5 (training), Elipse (match), and Shark (competition) — each with outbound purchase links.",
+      "Showcase-focused: presentation over full e-commerce, keeping the build lean and the brand front and centre.",
+      "Foundational architecture and component structure complete; content and asset integration in progress.",
+    ],
+    stack: ["Next.js (App Router)", "TypeScript", "Tailwind CSS", "Vercel"],
+    links: [],
+  },
 ];
 
 const universityProjects = projects.filter((p) => p.category === "university");
@@ -232,4 +308,4 @@ const otherProjects = projects.filter((p) => p.category === "other");
       animation: none;
     }
   }
-</style>code --install-extension anthropic.claude-code
+</style>
