@@ -18,7 +18,7 @@ const projects: Project[] = [
   {
     title: "WhatsApp-Based Language Data Collection for the SA-CDI",
     tagline:
-      "My Honours research project: replacing a mobile app with an accessible WhatsApp questionnaire so caregivers can contribute without installing anything.",
+      "My Honours research project: replacing a mobile app with an accessible WhatsApp questionnaire so users can contribute without installing anything.",
     status: "In progress",
     category: "university",
     context: "BScHons Computer Science · Stellenbosch University · Child Language Development Node",
@@ -42,14 +42,14 @@ const projects: Project[] = [
     category: "university",
     context: "Group project (team of three) · Madwaleni community, Eastern Cape",
     description: [
-      `Layita pairs a WhatsApp chatbot with a monitoring-and-evaluation dashboard for an NGO supporting caregivers in 
-      their child's first thousand days. The chatbot delivers approved parenting and health content in isiXhosa through a menu-based, 
-      on-demand model, so it never sends unsolicited messages, and it's designed to work in low-connectivity environments.`,
+      `We developed a WhatsApp chatbot with a monitoring-and-evaluation dashboard for an NGO supporting caregivers in 
+      their child's first thousand days. The chatbot delivers approved parenting and health content in English and isiXhosa through a menu-based, 
+      on-demand model, so it never sends unsolicited messages.`,
       `It answers frequently asked questions using a retrieval-augmented generation pipeline constrained to vetted sources, 
-      with content curated from Wordworks and Side-by-Side, and flags out-of-scope or clinical questions for human review rather 
+      with content curated from other NGOs (Wordworks and Side-by-Side), and flags out-of-scope or clinical questions for human review rather 
       than answering them itself. The backend runs on Flask and SQLite with Twilio for WhatsApp integration, and the React dashboard
        gives staff analytics on engagement, question categories, and retention to support evidence-based decisions. 
-       We worked in a user-centred, co-design process with NGO staff and community Mother Mentors, under formal ethics approval, with attention to anonymisation, consent, and cultural sensitivity.`,
+       We worked in a user-centred, co-design process with NGO (Layita) staff, with attention to anonymisation, consent, and cultural sensitivity.`,
     ],
     highlights: [
       "RAG constrained to vetted, NGO-approved sources; clinical queries escalated to a human rather than answered.",
@@ -62,18 +62,18 @@ const projects: Project[] = [
   {
     title: "Campus Carpool App",
     tagline:
-      "A final-year group project for the software company Gendac: an Android app that matches Stellenbosch students for shared rides to and from campus.",
+      "A undergraduate final-year group project for the software company Gendac: an Android app that matches Stellenbosch students for shared rides to and from campus.",
     status: "Completed",
     category: "university",
     context: "Final-year undergraduate group project (team of six) · Stellenbosch University · Client: Gendac",
     description: [
-      "In my final year of undergrad, my team built the Campus Carpool App for Gendac, a software company that brought us the brief as a real client. They wanted an Android app that connects Stellenbosch students with similar travel routes and schedules so they can share lifts — splitting fuel costs, cutting emissions, and easing the pressure on campus parking, while giving students a safer and more flexible alternative to driving alone or relying on public transport.",
-      "We built it with .NET MAUI and C# on an Azure backend, using Google Maps for routing and distance estimation and GitLab for version control and issue tracking. Students verify with their @sun.ac.za email and an OTP, then set themselves up as a driver or passenger, lay out a route with departure and arrival windows, and get matched with compatible students. A cost-splitting algorithm works out each person's fair share from distance travelled and a standard fuel tariff, matched users are connected through WhatsApp, and safety was treated as a first-class concern throughout — student-only access, mutual ratings and reviews, a women-only ride option, and POPI-compliant handling of location data.",
+      "In my final year of undergrad, we built the Campus Carpool App for Gendac, a software company that brought us the brief as a real client. They wanted an Android app that connects Stellenbosch students with similar travel routes and schedules so they can share lifts — splitting fuel costs, cutting emissions, and easing the pressure on campus parking, while giving students a safer and more flexible alternative to driving alone or relying on public transport.",
+      "We built it with .NET MAUI and C# on an Azure backend, using Google Maps for routing and distance estimation and GitLab for version control and issue tracking. Students verify with their university email and an OTP, then set themselves up as a driver or passenger, lay out a route with departure and arrival windows, and get matched with compatible students. The driver then adds the cost so that the potential passanger can view the cost of the ride, matched users are connected through WhatsApp.",
     ],
     highlights: [
-      "Route- and schedule-based matching with a cost-splitting algorithm accounting for distance and fuel tariff.",
+      "Route- and schedule-based matching.",
       "Student-only access via @sun.ac.za email verification with OTP, and driver/passenger modes with WhatsApp-based contact.",
-      "Safety-focused design: mutual ratings, a women-only ride option, and POPI-compliant location-data handling.",
+      "Safety-focused design: mutual ratings, and POPI-compliant location-data handling.",
     ],
     stack: [".NET MAUI", "C#", "Azure", "Google Maps API", "GitLab"],
     links: [],
@@ -81,18 +81,18 @@ const projects: Project[] = [
   {
     title: "This Portfolio Website",
     tagline:
-      "A passion project built to showcase my work and let people get to know me beyond a CV bullet point.",
+      "A passion project built to showcase my work and let people get to know me beyond my CV.",
     status: "In progress",
     category: "other",
     context: "Personal project · Ongoing",
     description: [
-      "I built this site because a CV and a GitHub profile only tell part of the story. I wanted somewhere I could show the projects I've actually enjoyed working on, explain the thinking behind them properly, and let a bit of my personality come through — not just a list of technologies I've touched.",
-      "It's built with Astro and Tailwind CSS v4, styled around a small custom colour system and quiet, intentional animation rather than off-the-shelf templates. I designed it to start from a clean, simple foundation and grow more expressive over time, layering in details like the polaroid-style photos and fade-up transitions once the basics were solid rather than trying to get everything perfect in one pass.",
+      "I built this site because a CV and a GitHub profile only tell part of the story. I wanted somewhere I could show the projects I've enjoyed working on, explain the thinking behind them properly, and let a bit of my personality come through; not just a list of technologies I've touched.",
+      "It's built with Astro and Tailwind CSS v4. I designed it to start from a clean, simple foundation and grow more expressive over time, layering in details like the polaroid-style photos and fade-up transitions once the basics were solid rather than trying to get everything perfect in one pass.",
     ],
     highlights: [
       "Custom design system built from scratch with Tailwind v4's CSS-first configuration.",
-      "Built iteratively — starting minimal and adding personality-driven touches like handwritten captions and polaroid framing.",
-      "A living project: sections like Hobbies & Adventures are still being filled in.",
+      "Built iteratively: starting minimal and adding personality-driven touches like handwritten captions and polaroid framing.",
+      "A living project: sections like Projects & Adventures are still being filled in.",
     ],
     stack: ["Astro", "Tailwind CSS v4", "TypeScript"],
     links: [
@@ -107,24 +107,25 @@ const projects: Project[] = [
     category: "other",
     context: "Scientific Computing Intern · South African National Space Agency (SANSA), on-site · June 2025",
     description: [
-      "As a scientific-computing intern at SANSA, I worked on a Python codebase implementing Spherical Elementary Current Systems (SECS) — a technique for modelling ionospheric currents from the geomagnetic field measured at ground observatories, in this case across South Africa and Namibia. My focus was making the existing scientific code cleaner, more configurable, and faster to run.",
+      "As a scientific-computing intern at SANSA, I worked on a Python codebase implementing Spherical Elementary Current Systems (SECS). SECS is a technique for modelling ionospheric currents from the geomagnetic field measured at ground observatories, in this case across South Africa and Namibia. My focus was making the existing scientific code cleaner, more configurable, and faster to run.",
       "I refactored what had been a single script into modular, configurable functions, using dataclasses and config files to separate the science from the parameters so runs could be set up without editing the code. I implemented the conversion of raw magnetic field components into the form the SECS calculations required, and optimised the data-processing pipeline by moving it onto vectorised pandas operations rather than slower row-by-row handling.",
+      "Lastly I translated the data onto a visible map, using Cartopy. This allowed one to view the direction and magnitude of the magnetic currents on a map of South Africa."
     ],
     highlights: [
       "Restructured a monolithic script into modular, configurable functions driven by dataclasses and config files.",
       "Implemented conversion of raw magnetic field components into the inputs required for SECS calculations.",
       "Optimised data processing with vectorised pandas operations for faster, cleaner runs.",
     ],
-    stack: ["Python", "pandas", "SECS"],
+    stack: ["Python", "pandas", "cartopy",],
     links: [],
   },
   {
-    title: "CSV-Flow — Data Workflow Desktop App",
+    title: "CSV-Flow - Data Workflow Desktop App",
     tagline:
       "Six months of freelance work maintaining and extending a Java desktop tool for building and running configurable CSV data workflows.",
     status: "Completed",
     category: "other",
-    context: "Freelance Software Developer · 29CPmax (Remote) · Aug 2025 – Feb 2026",
+    context: "Freelance Software Developer · 29CPmax (Remote) · Aug 2025 - Feb 2026",
     description: [
       "CSV-Flow is a Java-based desktop application for building CSV data workflows — a tool aimed at end-user productivity, with support for configurable actions, scheduling, and licensing and updates. I joined as a freelance developer for six months to help maintain and extend it, working remotely for 29CPmax.",
       "I started by getting to grips with an existing codebase, tracking down and fixing bugs to improve stability and performance before moving on to new functionality. From there I built out features that extended what the tool could do, including improvements to the workflow editor and to the user-facing operations people rely on day to day. The application is built and packaged with Maven.",
@@ -138,7 +139,7 @@ const projects: Project[] = [
     links: [],
   },
   {
-    title: "BE RUG BE — Brand Showcase Website",
+    title: "BE RUG BE - Brand Showcase Website",
     tagline:
       "A showcase site for a French rugby ball brand, built as a favour for a friend — presenting their flagship balls with links out to buy.",
     status: "In progress",
