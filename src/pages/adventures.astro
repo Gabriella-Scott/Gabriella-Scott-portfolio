@@ -37,7 +37,7 @@ const adventures = [
     body:
       `I swam competitively all through high school, until COVID forced me to stop. Somewhere in that break, I lost my love for the sport.
       After a rough academic year in 2023, I decided I needed something different, so I slowly started swimming again. I'd forgotten how peaceful it is; it's the one place where I can just be by myself and let my thoughts settle. No noise, just me, the water, and that black line.
-      Before long the nostalgia crept in and I started to miss competing, so I signed up for the Harbour to Harbour mile ocean swim in Gordon's Bay. I trained early mornings before class and evenings after, and training alone got hard fast, especially on the cold mornings when getting into the water was the last thing I wanted to do.
+      Before long the nostalgia crept in and I started to miss competing, so I signed up for the Harbour to Harbour mile ocean swim in Gordon's Bay. I trained early mornings before class and evenings after, and training alone got hard fast, especially on the cold mornings when getting into the water was the last thing I wanted.
       Then race day arrived, and the reality of the May cold hit. Thank goodness for my wetsuit. The water was cold but calm. The start of an open water swim is always the hardest part: everyone's kicking, arms are flying, and all you want is to get clear of the crowd. But once I settled in I felt good, and the cold stopped bothering me. The ocean was so clear I could see all the way to the bottom, it was beautiful.
       At some point I realised I was almost completely alone, caught between the front pack and the group behind me. The (entirely unreasonable) fear of a shark appearing out of nowhere crept in, but the thousands of starfish scattered across the seabed kept me calm and carried me through.
       When I finally reached the finish, it was so rewarding. I felt genuinely proud of myself for pushing through the fears (and the cold) I'd built up.`,
@@ -45,7 +45,7 @@ const adventures = [
 ];
 ---
 
-<Layout title="Adventures — Gabriella Scott">
+<Layout title="Adventures | Gabriella Scott">
   <h1 class="text-3xl font-bold tracking-tight">Adventures</h1>
 
   <p class="mt-3 max-w-2xl text-ink/70">
@@ -75,15 +75,25 @@ const adventures = [
             <div class="mt-5 flex flex-wrap gap-3">
               <img src="/IMG_8411.jpg" alt="Harbour to Harbour Swim photo 1" class="h-48 w-auto rounded-xl object-cover" />
               <img src="/swim1.PNG" alt="Harbour to Harbour Swim photo 2" class="h-48 w-auto rounded-xl object-cover" />
-              <video src="/swim_vid.MP4" autoplay loop muted playsinline class="h-48 w-auto rounded-xl object-cover" />
+              <video src="/output.mp4" autoplay loop muted playsinline class="h-48 w-auto rounded-xl object-cover" />
             </div>
           )}
         </article>
       ))}
+
+      <article class="fade-up rounded-2xl border-2 border-dashed border-sky/60 bg-sky/5 p-6">
+        <div class="flex items-center gap-3">
+          <h3 class="text-xl font-semibold text-ink/60">The next adventure</h3>
+          <span class="typing-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </span>
+        </div>
+        <p class="mt-2 font-handwriting text-xl text-ink/50">
+          stay tuned for more adventures&hellip;
+        </p>
+      </article>
     </div>
   </section>
-
-  <p class="mt-10 font-bold">Stay tuned! More adventure stories coming soon!</p>
 </Layout>
 
 <style>
@@ -92,7 +102,25 @@ const adventures = [
     from { opacity: 0; transform: translateY(12px); }
     to   { opacity: 1; transform: translateY(0); }
   }
+
+  .typing-dots { display: inline-flex; gap: 4px; align-items: center; }
+  .typing-dots span {
+    width: 7px;
+    height: 7px;
+    border-radius: 9999px;
+    background: var(--color-ink);
+    opacity: 0.35;
+    animation: typing-bounce 1.4s ease-in-out infinite;
+  }
+  .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes typing-bounce {
+    0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+    30%           { opacity: 0.9; transform: translateY(-4px); }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .fade-up { animation: none; }
+    .typing-dots span { animation: none; }
   }
 </style>

@@ -24,7 +24,7 @@ const projects: Project[] = [
     context: "BScHons Computer Science · Stellenbosch University · Child Language Development Node",
     description: [
       "The SA-CDI project is gathering Communicative Development Inventory responses from caregivers across South Africa to establish early-language development norms in the country's official languages, with a target of roughly 20,000 responses. An earlier pilot used a Flutter app, but asking caregivers to install software created real barriers around data cost, device storage, and digital literacy. My project delivers the same questionnaire through WhatsApp, a platform most caregivers already use, with no installation at all.",
-      "I'm building the system in Python and Flask, using Twilio for WhatsApp messaging, Firebase for storage, and Azure neural text-to-speech so caregivers with lower literacy can hear each question read aloud. It runs in English, Afrikaans, and isiXhosa, persists session state server-side so a questionnaire can be paused and resumed across conversations, and pseudonymises participant data to stay POPIA-compliant. Alongside the engineering, the work is structured around three research questions: how the WhatsApp interface compares to the original app, which text-to-speech system serves each language best, and how the interface holds up under usability evaluation.",
+      "I'm building the system in Python and Flask, using Twilio for WhatsApp messaging, Firebase for storage, and soon Azure neural text-to-speech wil be used so caregivers with lower literacy can hear each question read aloud. It runs in English, Afrikaans, and isiXhosa, persists session state server-side so a questionnaire can be paused and resumed across conversations, and pseudonymises participant data to stay POPIA-compliant. Alongside the engineering, the work is structured around three research questions: how the WhatsApp interface compares to the original app, which text-to-speech system serves each language best, and how the interface holds up under usability evaluation.",
     ],
     highlights: [
       "Working button-based prototype in the Twilio sandbox, with a WhatsApp Flows version prepared for migration once a Business Account is approved.",
@@ -67,7 +67,7 @@ const projects: Project[] = [
     category: "university",
     context: "Final-year undergraduate group project (team of six) · Stellenbosch University · Client: Gendac",
     description: [
-      "In my final year of undergrad, we built the Campus Carpool App for Gendac, a software company that brought us the brief as a real client. They wanted an Android app that connects Stellenbosch students with similar travel routes and schedules so they can share lifts — splitting fuel costs, cutting emissions, and easing the pressure on campus parking, while giving students a safer and more flexible alternative to driving alone or relying on public transport.",
+      "In my final year of undergrad, we built the Campus Carpool App for Gendac, a software company that brought us the brief as a real client. They wanted an Android app that connects Stellenbosch students with similar travel routes and schedules so they can share lifts - splitting fuel costs, cutting emissions, and easing the pressure on campus parking, while giving students a safer and more flexible alternative to driving alone or relying on public transport.",
       "We built it with .NET MAUI and C# on an Azure backend, using Google Maps for routing and distance estimation and GitLab for version control and issue tracking. Students verify with their university email and an OTP, then set themselves up as a driver or passenger, lay out a route with departure and arrival windows, and get matched with compatible students. The driver then adds the cost so that the potential passanger can view the cost of the ride, matched users are connected through WhatsApp.",
     ],
     highlights: [
@@ -127,7 +127,7 @@ const projects: Project[] = [
     category: "other",
     context: "Freelance Software Developer · 29CPmax (Remote) · Aug 2025 - Feb 2026",
     description: [
-      "CSV-Flow is a Java-based desktop application for building CSV data workflows — a tool aimed at end-user productivity, with support for configurable actions, scheduling, and licensing and updates. I joined as a freelance developer for six months to help maintain and extend it, working remotely for 29CPmax.",
+      "CSV-Flow is a Java-based desktop application for building CSV data workflows - a tool aimed at end-user productivity, with support for configurable actions, scheduling, and licensing and updates. I joined as a freelance developer for six months to help maintain and extend it, working remotely for 29CPmax.",
       "I started by getting to grips with an existing codebase, tracking down and fixing bugs to improve stability and performance before moving on to new functionality. From there I built out features that extended what the tool could do, including improvements to the workflow editor and to the user-facing operations people rely on day to day. The application is built and packaged with Maven.",
     ],
     highlights: [
@@ -141,16 +141,16 @@ const projects: Project[] = [
   {
     title: "BE RUG BE - Brand Showcase Website",
     tagline:
-      "A showcase site for a French rugby ball brand, built as a favour for a friend — presenting their flagship balls with links out to buy.",
+      "A showcase site for a French rugby ball brand, built as a favour for a friend - presenting their flagship balls with links out to buy.",
     status: "In progress",
     category: "other",
     context: "Personal project · Built for a friend",
     description: [
       "BE RUG BE is a French rugby ball brand, and I'm designing and building their showcase website as a favour for a friend. Rather than a full storefront, the site focuses on presenting the range clearly and sending visitors out to purchase, so the emphasis is on clean product presentation and brand feel rather than checkout logic.",
-      "It centres on the three flagship balls — the Alpha-T5 for training, the Elipse for match play, and the Shark for competition — each with its own presentation and an outbound link to buy. It's built with Next.js using the App Router and TypeScript, styled with Tailwind CSS, deployed on Vercel, and version-controlled through GitHub. The foundational architecture and component structure are in place, with content and asset integration still ongoing.",
+      "It centres on the three flagship balls - the Alpha-T5 for training, the Elipse for match play, and the Shark for competition - each with its own presentation and an outbound link to buy. It's built with Next.js using the App Router and TypeScript, styled with Tailwind CSS, deployed on Vercel, and version-controlled through GitHub. The foundational architecture and component structure are in place, with content and asset integration still ongoing.",
     ],
     highlights: [
-      "Three flagship products — Alpha-T5 (training), Elipse (match), and Shark (competition) — each with outbound purchase links.",
+      "Three flagship products - Alpha-T5 (training), Elipse (match), and Shark (competition) - each with outbound purchase links.",
       "Showcase-focused: presentation over full e-commerce, keeping the build lean and the brand front and centre.",
       "Foundational architecture and component structure complete; content and asset integration in progress.",
     ],
@@ -163,7 +163,7 @@ const universityProjects = projects.filter((p) => p.category === "university");
 const otherProjects = projects.filter((p) => p.category === "other");
 ---
 
-<Layout title="Projects — Gabriella Scott">
+<Layout title="Projects | Gabriella Scott">
   <div class="flex items-center gap-3">
     <span class="h-9 w-1.5 rounded-full bg-mint"></span>
     <h1 class="text-3xl font-bold tracking-tight">Projects</h1>
