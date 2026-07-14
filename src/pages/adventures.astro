@@ -31,35 +31,16 @@ const adventures = [
       I cannot wait to try again next year. `,
   },
   {
-    title: "Xterra",
-    date: "Feb 2025",
-    location: "Grabouw, Western Cape",
-    body:
-      "",
-  },
-  {
     title: "Harbour to Harbour Swim",
     date: "May 2024",
     location: "Gordons Bay, Western Cape",
     body:
-      `I used to swim in highschool as a sport, during covid I was forced to stop and eventually I lost my love for the sport.
-      After having a tough academic year in 2023, I decided that I need to do something different! I slowly started to swim again.
-      Swimming is so peaceful, its where you can just be by yourself and process your thoughts, no noise, just you the water and that black line.
-      I eventually started to feel nostalgic, I started to miss competing. I decided to sign up for the Harbour to Harbour mile ocean swim in 
-      Gordons Bay. I trained early mornings before class or in the evenings after class. Training by myself started to become tough, especially
-      in the mornings when it is cold. When the day of the swim came, the realisation of the May cold kicked in! At least I had a wetsuit! 
-      The water was cold, but calm. The start is always the hard part in an open water swim, everyone is kicking and arms are flying, you 
-      just want to get away from everyone. As time went on I felt good and the cold was not bothering me too much. The ocean was so clear I could
-      see to the bottom of the ocean, it was beautiful! Suddenly I realised that I was mostly alone, I was in between the front pack and the pack behind me.
-      The unrealistic fear of a shark suddenly appeariing kicked in, but the thousands and thousands of beautiful starfish at the bottom helped me to get 
-      through it. I finally reached the end! And it was so rewarding! I felt so proud of my self for overcoming the fears I had.`,
-  },
-  {
-    title: "Skydive",
-    date: "",
-    location: "Mosselbay, Western Cape",
-    body:
-      "",
+      `I swam competitively all through high school, until COVID forced me to stop. Somewhere in that break, I lost my love for the sport.
+      After a rough academic year in 2023, I decided I needed something different, so I slowly started swimming again. I'd forgotten how peaceful it is; it's the one place where I can just be by myself and let my thoughts settle. No noise, just me, the water, and that black line.
+      Before long the nostalgia crept in and I started to miss competing, so I signed up for the Harbour to Harbour mile ocean swim in Gordon's Bay. I trained early mornings before class and evenings after, and training alone got hard fast, especially on the cold mornings when getting into the water was the last thing I wanted to do.
+      Then race day arrived, and the reality of the May cold hit. Thank goodness for my wetsuit. The water was cold but calm. The start of an open water swim is always the hardest part: everyone's kicking, arms are flying, and all you want is to get clear of the crowd. But once I settled in I felt good, and the cold stopped bothering me. The ocean was so clear I could see all the way to the bottom, it was beautiful.
+      At some point I realised I was almost completely alone, caught between the front pack and the group behind me. The (entirely unreasonable) fear of a shark appearing out of nowhere crept in, but the thousands of starfish scattered across the seabed kept me calm and carried me through.
+      When I finally reached the finish, it was so rewarding. I felt genuinely proud of myself for pushing through the fears (and the cold) I'd built up.`,
   },
 ];
 ---
@@ -90,10 +71,19 @@ const adventures = [
               <video src="/Cycle_vid.MP4" autoplay loop muted playsinline class="h-48 w-auto rounded-xl object-cover" />
             </div>
           )}
+          {a.title === "Harbour to Harbour Swim" && (
+            <div class="mt-5 flex flex-wrap gap-3">
+              <img src="/IMG_8411.jpg" alt="Harbour to Harbour Swim photo 1" class="h-48 w-auto rounded-xl object-cover" />
+              <img src="/swim1.PNG" alt="Harbour to Harbour Swim photo 2" class="h-48 w-auto rounded-xl object-cover" />
+              <video src="/swim_vid.MP4" autoplay loop muted playsinline class="h-48 w-auto rounded-xl object-cover" />
+            </div>
+          )}
         </article>
       ))}
     </div>
   </section>
+
+  <p class="mt-10 font-bold">Stay tuned! More adventure stories coming soon!</p>
 </Layout>
 
 <style>
